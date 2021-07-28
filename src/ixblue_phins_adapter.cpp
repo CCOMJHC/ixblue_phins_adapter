@@ -36,7 +36,7 @@ void insCallback(const ixblue_ins_msgs::Ins::ConstPtr& msg)
   imu.header.stamp = timestamp;
   tf2::Quaternion q;
   double yaw = M_PI*(90-msg->heading)/180.0;
-  q.setRPY(M_PI*msg->roll/180.0, M_PI*msg->pitch, yaw);
+  q.setRPY(M_PI*msg->roll/180.0, M_PI*msg->pitch/180.0, yaw);
   //q.setRPY(0.0, 0.0, yaw);
   tf2::convert(q, imu.orientation);
   orientation_pub.publish(imu);
