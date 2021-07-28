@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ixblue_phins_adapter</name>
+  <version>0.0.0</version>
+  <description>The ixblue_phins_adapter package</description>
+
+  <maintainer email="roland@ccom.unh.edu">Roland Arsenault</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>geometry_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>ixblue_ins_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+
+  <export>
+  </export>
+</package>
