@@ -59,9 +59,9 @@ int main(int argc, char **argv)
 
   frame_id = ros::param::param<std::string>("~frame_id", "base_link");
 
-  position_pub = n.advertise<sensor_msgs::NavSatFix>("nav/phins/position", 1);
-  orientation_pub = n.advertise<sensor_msgs::Imu>("nav/phins/orientation",1);
-  velocity_pub = n.advertise<geometry_msgs::TwistWithCovarianceStamped>("nav/phins/velocity",1);
+  position_pub = n.advertise<sensor_msgs::NavSatFix>("project11/nav/phins/position", 1);
+  orientation_pub = n.advertise<sensor_msgs::Imu>("project11/nav/phins/orientation",1);
+  velocity_pub = n.advertise<geometry_msgs::TwistWithCovarianceStamped>("project11/nav/phins/velocity",1);
 
   ros::Subscriber ins_sub = n.subscribe("/d_phins/ins", 1, &insCallback);
 
