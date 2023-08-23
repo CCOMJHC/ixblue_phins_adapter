@@ -63,7 +63,7 @@ int main(int argc, char **argv)
   orientation_pub = n.advertise<sensor_msgs::Imu>("project11/nav/phins/orientation",1);
   velocity_pub = n.advertise<geometry_msgs::TwistWithCovarianceStamped>("project11/nav/phins/velocity",1);
 
-  ros::Subscriber ins_sub = n.subscribe("/d_phins/ins", 1, &insCallback);
+  ros::Subscriber ins_sub = n.subscribe("/pos/d_phins/ins", 1, &insCallback);
 
   ros::spin();
 }
