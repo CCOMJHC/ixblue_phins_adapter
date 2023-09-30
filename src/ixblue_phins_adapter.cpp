@@ -25,6 +25,9 @@ void insCallback(const ixblue_ins_msgs::Ins::ConstPtr& msg)
   nsf.header.stamp = timestamp;
   nsf.latitude = msg->latitude;
   nsf.longitude = msg->longitude;
+  // ixblue ins msg defines longitude from 0 to 360
+  if(nsf.longitude > 180.0) 
+    nsf.longitude -= 360.0;
   nsf.altitude = msg->altitude;
   nsf.position_covariance = msg->position_covariance;
   nsf.position_covariance_type = sensor_msgs::NavSatFix::COVARIANCE_TYPE_DIAGONAL_KNOWN;
