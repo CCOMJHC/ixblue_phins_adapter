@@ -5,7 +5,7 @@ add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  ixblue_ins_msgs
+  cortix_msgs
   nav_msgs
   sensor_msgs
   geometry_msgs

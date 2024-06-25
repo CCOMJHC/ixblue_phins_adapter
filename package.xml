@@ -11,7 +11,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <depend>geometry_msgs</depend>
   <depend>roscpp</depend>
-  <depend>ixblue_ins_msgs</depend>
+  <depend>cortix_msgs</depend>
   <depend>sensor_msgs</depend>
   <depend>nav_msgs</depend>
 

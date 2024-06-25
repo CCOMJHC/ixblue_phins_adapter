@@ -1,6 +1,6 @@
 #include <ros/ros.h>
 
-#include "ixblue_ins_msgs/Ins.h"
+#include "cortix_msgs/Ins.h"
 
 #include "geometry_msgs/TwistWithCovarianceStamped.h"
 #include "sensor_msgs/NavSatFix.h"
@@ -14,7 +14,7 @@ ros::Publisher velocity_pub;
 
 std::string frame_id;
 
-void insCallback(const ixblue_ins_msgs::Ins::ConstPtr& msg)
+void insCallback(const cortix_msgs::Ins::ConstPtr& msg)
 {
   ros::Time timestamp = msg->header.stamp;
   if(timestamp.is_zero()) // simulator has zero timestamp
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
   orientation_pub = n.advertise<sensor_msgs::Imu>("project11/nav/phins/orientation",1);
   velocity_pub = n.advertise<geometry_msgs::TwistWithCovarianceStamped>("project11/nav/phins/velocity",1);
 
-  ros::Subscriber ins_sub = n.subscribe("/pos/d_phins/ins", 1, &insCallback);
+  ros::Subscriber ins_sub = n.subscribe("/cortix/navigation/d_phins/ins", 1, &insCallback);
 
   ros::spin();
 }
